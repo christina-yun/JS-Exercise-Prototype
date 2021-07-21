@@ -106,11 +106,24 @@ Car.prototype.fill = function(numOfGallons){
   this.tank = this.tank + numOfGallons;
 }
 
-const lexus = new Car('Lexus RX300', 20);
-lexus.fill(11);
-// lexus.fill(4);
+Car.prototype.drive = function(miles){
+  if (miles/this.milesPerGallon - this.tank < 0){
+    this.odometer = this.odometer + miles;
+    this.tank = this.tank - miles/this.milesPerGallon;
+    return;
 
-console.log('Task 2: ', lexus)
+  } else if(miles/this.milesPerGallon - this.tank >= 0){
+    this.odometer = this.odometer + this.milesPerGallon * this.tank;
+    this.tank = 0;
+    return `I ran out of fuel at ${this.odometer} miles!`;
+  }
+};
+
+const lexus = new Car('Lexus RX300', 20);
+
+
+console.log('Task 2: ', lexus.drive(90));
+
 
 /*
   TASK 3
