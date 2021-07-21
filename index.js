@@ -136,10 +136,18 @@ console.log('Task 3: ', biscuit.play());
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  
+  1. Window Binding: 
+    When the keyword 'this' has nothing to bind to, in an attempt to appease the programmer, it shows all of JavaScript in the hope that one of those things would be what the 'this' is referring to. If the window/all of JavaScript is shown, this is an error
+  
+  2. Implicit Binding:
+    Whenever there's a dot to the right of an object, the 'this' refers to the object before the dot, and is implied to be referring to whatever is being called for that particular object.
+  
+  3. New Binding:
+    Using the 'new' keyword together with a constructor function immediately binds the 'this' keyword to that specific object that is being created by the constructor function.
+
+  4. Explicit Binding:
+    Whenever we use a .call or .apply method, 'this' will apply to the object that is defined by those methods and override how constructor functions are usually set. 
 */
 
 
